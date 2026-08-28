@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: Вики знаний бичи.bat
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -31,15 +31,15 @@ configuration:
         highlight: rgba(143, 159, 169, 0.15)
         textHighlight: "#fff23688"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#313338"       # Фон сайта (темно-серый Discord)
+        lightgray: "#1e1f22"   # Фон боковых панелей меню и строки поиска
+        gray: "#949ba4"        # Цвет второстепенного текста, дат и подписей
+        darkgray: "#dbdee1"    # Цвет основного текста статей (комфортный светло-серый)
+        dark: "#ffffff"        # Цвет главных заголовков
+        secondary: "#5865f2"   # Цвет ссылок и важных кнопок (фирменный Blurple)
+        tertiary: "#57f287"    # Цвет тегов и ссылок при наведении (зеленый Discord)
+        highlight: "rgba(88, 101, 242, 0.15)" # Подсветка строк при поиске
+        textHighlight: "#5865f244"
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -114,7 +114,7 @@ plugins:
     enabled: true
     options:
       theme: default
-      mode: both
+      mode: dark
   - source: "@quartz-community/remove-draft"
     enabled: true
   - source: "@quartz-community/explicit-publish"
