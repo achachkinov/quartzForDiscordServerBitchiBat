@@ -1,9 +1,9 @@
 ---
-title: Welcome to Quartz
+title: Вики бичи.bat
 ---
+это вики со всяким полезным стаффом и знаниями
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
-
-
-good
+пока что доступны:
+[[как устроена вики бичей бат]]
+[[как редактировать вики бичи бат]]
+[[теория систем основные принципы]]

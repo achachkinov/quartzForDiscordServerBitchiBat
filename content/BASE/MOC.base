@@ -1,0 +1,111 @@
+filters:
+  and:
+    - file.tags.contains("MOC")
+views:
+  - type: table
+    name: inBox
+    filters:
+      and:
+        - thought_status == "inBox"
+    groupBy:
+      property: priority
+      direction: ASC
+    order:
+      - file.name
+      - created_dt
+      - file.mtime
+    sort:
+      - property: file.ctime
+        direction: DESC
+    cardSize: 240
+    imageAspectRatio: 0.85
+    rowHeight: medium
+    columnSize:
+      file.name: 1137
+      note.created_dt: 552
+  - type: table
+    name: fresh
+    filters:
+      and:
+        - thought_status == "fresh"
+    groupBy:
+      property: priority
+      direction: ASC
+    order:
+      - file.name
+      - created_dt
+      - file.mtime
+    sort:
+      - property: file.ctime
+        direction: DESC
+    cardSize: 240
+    imageAspectRatio: 0.85
+    rowHeight: medium
+    columnSize:
+      file.name: 1137
+      note.created_dt: 552
+  - type: table
+    name: toLink
+    filters:
+      and:
+        - thought_status == "toLink"
+    groupBy:
+      property: priority
+      direction: ASC
+    order:
+      - file.name
+      - created_dt
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+      - property: file.ctime
+        direction: DESC
+    cardSize: 240
+    imageAspectRatio: 0.85
+    rowHeight: medium
+    columnSize:
+      file.name: 1137
+      note.created_dt: 552
+  - type: table
+    name: archived
+    filters:
+      and:
+        - thought_status == "archive"
+    groupBy:
+      property: priority
+      direction: ASC
+    order:
+      - file.name
+      - created_dt
+      - file.mtime
+    sort:
+      - property: file.ctime
+        direction: DESC
+    cardSize: 240
+    imageAspectRatio: 0.85
+    rowHeight: medium
+    columnSize:
+      file.name: 1137
+      note.created_dt: 552
+  - type: table
+    name: freezed
+    filters:
+      and:
+        - thought_status == "freezed"
+    groupBy:
+      property: priority
+      direction: ASC
+    order:
+      - file.name
+      - created_dt
+      - file.mtime
+    sort:
+      - property: file.ctime
+        direction: DESC
+    cardSize: 240
+    imageAspectRatio: 0.85
+    rowHeight: medium
+    columnSize:
+      file.name: 1137
+      note.created_dt: 552
