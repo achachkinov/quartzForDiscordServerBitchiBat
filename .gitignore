@@ -14,20 +14,17 @@ quartz/cli/tui/dist/
 
 
 
-# 1. Разрешаем Git заходить в структуру настроек
-!content/.obsidian/
-!content/.obsidian/plugins/
+# 1. Блокируем файлы конфигурации в корне .obsidian, но НЕ трогаем саму папку plugins
+content/.obsidian/*.json
+content/.obsidian/themes/
+content/.obsidian/cache/
 
-# 2. Блокируем абсолютно ВСЕ файлы настроек внутри .obsidian (темы, кэш, горячие клавиши)
-content/.obsidian/*
+# 2. Блокируем вообще ВСЕ плагины внутри папки plugins по умолчанию
+content/.obsidian/plugins/*
 
-# 3. Принудительно разрешаем отправлять папки плагинов на GitHub
+# 3. Принудительно открываем доступ ТОЛЬКО к нужным пяти папкам
 !content/.obsidian/plugins/obsidian-excalidraw-plugin/
 !content/.obsidian/plugins/obsidian-git/
 !content/.obsidian/plugins/obsidian-tasks-plugin/
 !content/.obsidian/plugins/quickadd/
 !content/.obsidian/plugins/templater-obsidian/
-
-# 4. Жестко блокируем личные открытые вкладки участников, которые меняются каждую секунду
-content/.obsidian/workspace.json
-content/.obsidian/workspace-mobile.json
