@@ -1,9 +1,9 @@
 .DS_Store
+.gitignore
 node_modules
 public
 prof
 tsconfig.tsbuildinfo
-.obsidian
 .quartz-cache
 private/
 .replit
@@ -11,3 +11,23 @@ replit.nix
 .quartz/
 quartz/cli/tui/dist/
 .turbo/
+
+
+
+# 1. Разрешаем Git заходить в структуру настроек
+!content/.obsidian/
+!content/.obsidian/plugins/
+
+# 2. Блокируем абсолютно ВСЕ файлы настроек внутри .obsidian (темы, кэш, горячие клавиши)
+content/.obsidian/*
+
+# 3. Принудительно разрешаем отправлять папки плагинов на GitHub
+!content/.obsidian/plugins/obsidian-excalidraw-plugin/
+!content/.obsidian/plugins/obsidian-git/
+!content/.obsidian/plugins/obsidian-tasks-plugin/
+!content/.obsidian/plugins/quickadd/
+!content/.obsidian/plugins/templater-obsidian/
+
+# 4. Жестко блокируем личные открытые вкладки участников, которые меняются каждую секунду
+content/.obsidian/workspace.json
+content/.obsidian/workspace-mobile.json
