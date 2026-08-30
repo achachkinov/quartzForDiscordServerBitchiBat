@@ -13,10 +13,7 @@ quartz/cli/tui/dist/
 .turbo/
 
 
-
-# 1. По умолчанию игнорируем всё внутри .obsidian
-content/.obsidian/
-
+content/.obsidian/themes
 # 2. Разрешаем отслеживать файлы конфигурации (список плагинов, горячие клавиши и внешний вид)
 !content/.obsidian/community-plugins.json
 !content/.obsidian/hotkeys.json
