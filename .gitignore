@@ -14,17 +14,25 @@ quartz/cli/tui/dist/
 
 
 
-# 1. Блокируем файлы конфигурации в корне .obsidian, но НЕ трогаем саму папку plugins
-content/.obsidian/*.json
-content/.obsidian/themes/
+# 1. По умолчанию игнорируем всё внутри .obsidian
+content/.obsidian/
+
+# 2. Разрешаем отслеживать файлы конфигурации (список плагинов, горячие клавиши и внешний вид)
+!content/.obsidian/community-plugins.json
+!content/.obsidian/hotkeys.json
+!content/.obsidian/appearance.json
+
+# 3. Запрещаем ненужные системные файлы, кэш и историю вкладок (workspace)
+content/.obsidian/workspace.json
+content/.obsidian/workspace-mobile.json
 content/.obsidian/cache/
+content/.obsidian/backups/
 
-# 2. Блокируем вообще ВСЕ плагины внутри папки plugins по умолчанию
+# 4. Разрешаем загрузку только пяти конкретных плагинов и всего их содержимого
+!content/.obsidian/plugins/
 content/.obsidian/plugins/*
-
-# 3. Принудительно открываем доступ ТОЛЬКО к нужным пяти папкам
-!content/.obsidian/plugins/obsidian-excalidraw-plugin/
-!content/.obsidian/plugins/obsidian-git/
-!content/.obsidian/plugins/obsidian-tasks-plugin/
-!content/.obsidian/plugins/quickadd/
-!content/.obsidian/plugins/templater-obsidian/
+!content/.obsidian/plugins/obsidian-excalidraw-plugin/**
+!content/.obsidian/plugins/obsidian-git/**
+!content/.obsidian/plugins/obsidian-tasks-plugin/**
+!content/.obsidian/plugins/quickadd/**
+!content/.obsidian/plugins/templater-obsidian/**
