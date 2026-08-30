@@ -26,10 +26,11 @@ content/.obsidian/cache/
 content/.obsidian/backups/
 
 # 4. Разрешаем загрузку только пяти конкретных плагинов и всего их содержимого
-!content/.obsidian/plugins/
 content/.obsidian/plugins/*
-!content/.obsidian/plugins/obsidian-excalidraw-plugin/**
-!content/.obsidian/plugins/obsidian-git/**
-!content/.obsidian/plugins/obsidian-tasks-plugin/**
-!content/.obsidian/plugins/quickadd/**
-!content/.obsidian/plugins/templater-obsidian/**
+
+# 3. Принудительно открываем доступ ТОЛЬКО к нужным пяти папкам
+!content/.obsidian/plugins/obsidian-excalidraw-plugin/
+!content/.obsidian/plugins/obsidian-git/
+!content/.obsidian/plugins/obsidian-tasks-plugin/
+!content/.obsidian/plugins/quickadd/
+!content/.obsidian/plugins/templater-obsidian/
