@@ -9,7 +9,6 @@ related:
 opposite:
 next:
 type:
-thought_status: "<% await tp.system.suggester(["inBox", "fresh", "toLink", "archive", "freezed"], ["inBox", "fresh", "toLink", "archive", "freezed"]) %>"
-priority: <% await tp.system.prompt("скока приоритет") %>
+thought_status: "<% await tp.system.suggester(["inBox", "fresh", "handling", "mature", "freezed"], ["inBox", "fresh", "handling", "mature", "freezed"]) %>"
 ---
 ###### <% tp.file.title %>

@@ -7,72 +7,68 @@ views:
     filters:
       and:
         - thought_status == "inBox"
-    groupBy:
-      property: priority
-      direction: ASC
     order:
       - file.name
       - created_dt
       - file.mtime
     sort:
+      - property: file.mtime
+        direction: ASC
       - property: file.ctime
         direction: DESC
     cardSize: 240
     imageAspectRatio: 0.85
     rowHeight: medium
     columnSize:
-      file.name: 1137
-      note.created_dt: 552
+      file.name: 331
+      note.created_dt: 175
   - type: table
     name: fresh
     filters:
       and:
         - thought_status == "fresh"
-    groupBy:
-      property: priority
-      direction: ASC
     order:
       - file.name
       - created_dt
       - file.mtime
     sort:
+      - property: created_dt
+        direction: DESC
       - property: file.ctime
         direction: DESC
     cardSize: 240
     imageAspectRatio: 0.85
     rowHeight: medium
     columnSize:
-      file.name: 1137
-      note.created_dt: 552
+      file.name: 265
+      note.created_dt: 155
   - type: table
-    name: toLink
+    name: handling
     filters:
-      and:
-        - thought_status == "toLink"
-    groupBy:
-      property: priority
-      direction: ASC
+      or:
+        - thought_status.contains("toLink")
+        - thought_status.contains("handling")
     order:
       - file.name
       - created_dt
       - file.mtime
     sort:
+      - property: created_dt
+        direction: ASC
       - property: file.ctime
         direction: DESC
     cardSize: 240
     imageAspectRatio: 0.85
     rowHeight: medium
     columnSize:
-      file.name: 1137
-      note.created_dt: 552
+      file.name: 279
+      note.created_dt: 176
   - type: table
-    name: archived
+    name: mature
     filters:
-      and:
-        - thought_status == "archive"
-    groupBy:
-      property: priority
-      direction: ASC
+      or:
+        - thought_status.contains("archive")
+        - thought_status.contains("mature")
     order:
       - file.name
       - created_dt
@@ -84,16 +80,13 @@ views:
     imageAspectRatio: 0.85
     rowHeight: medium
     columnSize:
-      file.name: 1137
-      note.created_dt: 552
+      file.name: 326
+      note.created_dt: 169
   - type: table
     name: freezed
     filters:
       and:
         - thought_status == "freezed"
-    groupBy:
-      property: priority
-      direction: ASC
     order:
       - file.name
       - created_dt
@@ -105,5 +98,5 @@ views:
     imageAspectRatio: 0.85
     rowHeight: medium
     columnSize:
-      file.name: 1137
-      note.created_dt: 552
+      file.name: 147
+      note.created_dt: 187

@@ -7,9 +7,6 @@ views:
     filters:
       and:
         - thought_status == "inBox"
-    groupBy:
-      property: priority
-      direction: ASC
     order:
       - file.name
       - created_dt
@@ -28,9 +25,27 @@ views:
     filters:
       and:
         - thought_status == "fresh"
-    groupBy:
-      property: priority
-      direction: ASC
+    order:
+      - file.name
+      - created_dt
+      - file.mtime
+    sort:
+      - property: created_dt
+        direction: DESC
+      - property: file.ctime
+        direction: DESC
+    cardSize: 240
+    imageAspectRatio: 0.85
+    rowHeight: medium
+    columnSize:
+      file.name: 1137
+      note.created_dt: 552
+  - type: table
+    name: handling
+    filters:
+      or:
+        - thought_status.contains("toLink")
+        - thought_status.contains("handling")
     order:
       - file.name
       - created_dt
@@ -45,36 +60,11 @@ views:
       file.name: 1137
       note.created_dt: 552
   - type: table
-    name: toLink
+    name: mature
     filters:
-      and:
-        - thought_status == "toLink"
-    groupBy:
-      property: priority
-      direction: ASC
-    order:
-      - file.name
-      - created_dt
-      - file.mtime
-    sort:
-      - property: file.name
-        direction: ASC
-      - property: file.ctime
-        direction: DESC
-    cardSize: 240
-    imageAspectRatio: 0.85
-    rowHeight: medium
-    columnSize:
-      file.name: 1137
-      note.created_dt: 552
-  - type: table
-    name: archived
-    filters:
-      and:
-        - thought_status == "archive"
-    groupBy:
-      property: priority
-      direction: ASC
+      or:
+        - thought_status.contains("archive")
+        - thought_status.contains("mature")
     order:
       - file.name
       - created_dt
@@ -93,9 +83,6 @@ views:
     filters:
       and:
         - thought_status == "freezed"
-    groupBy:
-      property: priority
-      direction: ASC
     order:
       - file.name
       - created_dt
