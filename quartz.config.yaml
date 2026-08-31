@@ -159,6 +159,11 @@ plugins:
     enabled: true
   - source: "@quartz-community/explorer"
     enabled: true
+    options:
+      title: Explorer
+      folderClickBehavior: collapse
+      folderDefaultState: collapsed
+      useSavedState: false # <-- Вот этот параметр из официального гайда
     layout:
       position: left
       priority: 50
